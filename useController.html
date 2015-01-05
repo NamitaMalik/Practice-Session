@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="">
+<input type="text" ng-model="data.message">
+{{data.message}}
+<div ng-controller="MyController">
+    <input type="text" ng-model="data.message">
+    {{data.message}}
+</div>
+<div ng-controller="MySecondController">
+    <input type="text" ng-model="data.message">
+    {{data.message}}
+</div>
+<script src="useController.js"></script>
+</body>
+</html>
