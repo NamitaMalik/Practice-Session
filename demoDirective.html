@@ -5,20 +5,16 @@
     <script src="angular.min.js"></script>
 </head>
 <body ng-app="myApp">
-<div enter leave>
+<div enter-Leave>
 You are my love!
 </div>
 <script>
     var app = angular.module('myApp',[]);
-    app.directive("enter",function(){
+    app.directive("enterLeave",function(){
         return function(scope,element){
             element.bind("mouseenter",function(){
                 console.log("I am in!")
             })
-        }
-    })
-    app.directive("leave",function(){
-        return function(scope,element){
             element.bind("mouseleave",function(){
                 console.log("I am out!")
             })
