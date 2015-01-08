@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <superman></superman>
+    </div>
+<script>
+    var app = angular.module("myApp",[]);
+    app.directive("superman",function(){
+        return {
+            restrict : "E",
+            template : "<div> I am a good girl!</div>"
+        }
+    });
+</script>
+</body>
+</html>
