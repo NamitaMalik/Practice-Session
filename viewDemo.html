@@ -6,8 +6,9 @@
     <script src="angular-route.js"></script>
 </head>
 <body ng-app="app">
-<div>
+<div ng-controller="Appctrl">
     <ng-view></ng-view>
+    {{model.message}}
 </div>
 <script>
     var app = angular.module('app', ['ngRoute']);
@@ -24,6 +25,9 @@
     app.controller("Appctrl", function ($scope) {
         $scope.data = {
             message: "This is it!"
+        }
+        $scope.model = {
+            message: "I like it!"
         }
     })
 </script>
