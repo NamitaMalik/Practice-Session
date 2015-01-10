@@ -6,9 +6,11 @@
     <script src="angular-route.js"></script>
 </head>
 <body ng-app="app">
-<div ng-controller="Appctrl">
+<div ng-controller="MstrCntrl">
     <ng-view></ng-view>
-    {{model.message}}
+    <a href="#/">Click</a>
+    <a href="#bind">Click Bind</a>
+
 </div>
 <script>
     var app = angular.module('app', ['ngRoute']);
@@ -22,12 +24,15 @@
                     templateUrl: "dataBinding.html"
               })
     });
+    app.controller("MstrCntrl",function($scope){
+        $scope.model = {
+            message: "I like it!"
+        }
+    });
+
     app.controller("Appctrl", function ($scope) {
         $scope.data = {
             message: "This is it!"
-        }
-        $scope.model = {
-            message: "I like it!"
         }
     })
 </script>
