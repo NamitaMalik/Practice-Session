@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="app">
+<div>
+    <ng-view></ng-view>
+</div>
+<script>
+    var app = angular.module('app',[]);
+    app.config(function($routeProvider){
+      $routeProvider.when('/',{
+            templateUrl:"app.html",
+            controller:"Appctrl"
+        }
+              .when('/bind',{
+                  templateUrl:"dataBinding.html"
+              })
+      )
+    })
+    app.controller("Appctrl",function($scope){
+        $scope.data={
+            message:"This is it!"
+        }
+    })
+</script>
+</body>
+</html>
