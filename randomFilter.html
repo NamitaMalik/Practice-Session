@@ -11,9 +11,6 @@
     {{data.min}}
     {{data.max}}
     {{data.min|range:data.max}}
-    <ul>
-        <li ng-repeat="n in data.min|range:data.max" value="n">{{n}}</li>
-    </ul>
 </div>
 <script>
     var myApp = angular.module('myApp',[]);
