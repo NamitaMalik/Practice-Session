@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-App="myApp">
+<div ng-controller="FirstControl">
+    <input type="text" ng-model="data.min">
+    <input type="text" ng-model="data.max">
+    {{data.min}}
+    {{data.max}}
+    {{data.min|range:data.max}}
+    <ul>
+        <li ng-repeat="n in data.min|range:data.max" value="n">{{n}}</li>
+    </ul>
+</div>
+<script>
+    var myApp = angular.module('myApp',[]);
+    myApp.filter('range',function(){
+        return function(min,max){
+            min = parseInt(min);
+            max = parseInt(max);
+            var input= Math.floor((Math.random() * (max - min + 1)) + min);
+            return input;
+        }
+    })
+    function FirstControl($scope){
+
+    }
+</script>
+</body>
+</html>
